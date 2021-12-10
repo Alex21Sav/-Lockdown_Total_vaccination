@@ -5,13 +5,30 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     [SerializeField] private GameObject _syringe;
+    private readonly int _shootSpeed=10;
+    private bool _canShoot=true;
 
-    private void Update()
+
+    public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)||Input.GetMouseButtonDown(0))
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))&&_canShoot)
         {
-            GameObject syringe=Instantiate(_syringe, transform.position, Quaternion.Euler(90,-90,0));
-            syringe.GetComponent<Rigidbody>().AddForce(Vector3.forward*10,ForceMode.Impulse);
+            GameObject syringe = Instantiate(_syringe, transform.position, Quaternion.Euler(90, -90, 0));
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.y = 1;
+            syringe.transform.LookAt(mousePosition - transform.position);
+            syringe.GetComponent<Rigidbody>().AddForce((mousePosition - transform.position).normalized * _shootSpeed, ForceMode.Impulse);
+            _canShoot = false;
+            StartCoroutine(Reload());
+        }
+    }
+
+    IEnumerator Reload()
+    {
+        while (_canShoot==false)
+        {
+            yield return new WaitForSeconds(0.5f);
+            _canShoot = true;
         }
     }
 }
