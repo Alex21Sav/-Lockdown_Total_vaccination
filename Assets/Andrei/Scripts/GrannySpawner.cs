@@ -39,22 +39,31 @@ public class GrannySpawner : MonoBehaviour
 	void GrannySpawn()
     {
 		spawnLocation.y = 0.1f;
-		int i = Random.Range(1, 5);
-		if (i == 1)
-		{
-            
-		}
-		else if (i == 2)
-		{
-            
+		int i = Random.Range(1, 6);
+        if (i == 1)
+        {
+            spawnLocation.x = -13.5f;
+            spawnLocation.z = 0;
         }
-		else if (i == 3)
-		{
-            
+        else if (i == 2)
+        {
+            spawnLocation.x = -4.6f;
+            spawnLocation.z = -14;
         }
-		else 
-		{
-           
+        else if (i == 3)
+        {
+            spawnLocation.x = 13.2f;
+            spawnLocation.z = -14;
+        }
+        else if (i == 4)
+        {
+            spawnLocation.x = 13.2f;
+            spawnLocation.z = 14;
+        }
+        else
+        {
+            spawnLocation.x = 3;
+            spawnLocation.z = 14;
         }
 
         Instantiate<GameObject>(prefabGranny, new Vector3(spawnLocation.x, spawnLocation.y, spawnLocation.z), Quaternion.identity);
