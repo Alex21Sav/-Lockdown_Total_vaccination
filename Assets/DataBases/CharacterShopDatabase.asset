@@ -13,49 +13,49 @@ MonoBehaviour:
   m_Name: CharacterShopDatabase
   m_EditorClassIdentifier: 
   Characters:
-  - Image: {fileID: 21300000, guid: 1a38c90b9c2d455448c2cad83d71ebf3, type: 3}
+  - Image: {fileID: -1536459507966351452, guid: a25e9e2a316aecb4d8e85fefa722f6e4, type: 3}
     Name: Circle_Green
     Speed: 31.8
     Power: 12.7
     Price: 0
     IsPurchase: 1
-  - Image: {fileID: 21300000, guid: ef86c2802f25508468de451c9a5f439c, type: 3}
+  - Image: {fileID: 6809395928767253401, guid: a25e9e2a316aecb4d8e85fefa722f6e4, type: 3}
     Name: Circle_Purple
     Speed: 11.7
     Power: 12.2
     Price: 250
     IsPurchase: 1
-  - Image: {fileID: 21300000, guid: 82b26208f0ca4f34998cb7e98ac68844, type: 3}
+  - Image: {fileID: -3967988398455133768, guid: 13e2f1dc0fcc45440b088a3237fb6efc, type: 3}
     Name: Circle_Red
     Speed: 18.6
     Power: 18.6
     Price: 300
-    IsPurchase: 0
-  - Image: {fileID: 21300000, guid: 6812572c1d4077b42bb114220aebf4ac, type: 3}
+    IsPurchase: 1
+  - Image: {fileID: -2784434246454418140, guid: e655736ea7a7f4647a89529d7a316159, type: 3}
     Name: Circle_Yellow
     Speed: 23.3
     Power: 30.7
     Price: 450
-    IsPurchase: 0
-  - Image: {fileID: 21300000, guid: 4d2c024316268974aba92345a4b568cd, type: 3}
+    IsPurchase: 1
+  - Image: {fileID: -534005391291879808, guid: e655736ea7a7f4647a89529d7a316159, type: 3}
     Name: Square_Green
     Speed: 37.4
     Power: 31.9
     Price: 700
-    IsPurchase: 0
-  - Image: {fileID: 21300000, guid: 090b75a2d974ae44f8706bf43c53d2a6, type: 3}
+    IsPurchase: 1
+  - Image: {fileID: -4031509636722478211, guid: 46cfd0d3ca4181a40b3be02c50b9ee6b, type: 3}
     Name: Square_Purple
     Speed: 43.4
     Power: 55.5
     Price: 900
     IsPurchase: 0
-  - Image: {fileID: 21300000, guid: eb99000d22c17ac45bed119db8d72d70, type: 3}
+  - Image: {fileID: -4044023919805817862, guid: 46cfd0d3ca4181a40b3be02c50b9ee6b, type: 3}
     Name: Square_Red
     Speed: 60.5
     Power: 46.7
     Price: 1200
     IsPurchase: 0
-  - Image: {fileID: 21300000, guid: 59e90d50899f4ea4fbdb60bcde60190b, type: 3}
+  - Image: {fileID: -4496426754613798421, guid: 1c4f1805033445a4e91d7c59119b423b, type: 3}
     Name: Square_Yellow
     Speed: 90.1
     Power: 78.6
