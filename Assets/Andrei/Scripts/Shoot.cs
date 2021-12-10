@@ -16,7 +16,6 @@ public class Shoot : MonoBehaviour
             GameObject syringe = Instantiate(_syringe, transform.position, Quaternion.Euler(90, -90, 0));
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.y = 1;
-            syringe.transform.LookAt(mousePosition - transform.position);
             syringe.GetComponent<Rigidbody>().AddForce((mousePosition - transform.position).normalized * _shootSpeed, ForceMode.Impulse);
             _canShoot = false;
             StartCoroutine(Reload());
