@@ -18,10 +18,23 @@ public class Shoot : MonoBehaviour
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.y = 1;
             syringe.GetComponent<Rigidbody>().AddForce((mousePosition - transform.position).normalized * _shootSpeed, ForceMode.Impulse);
+
+            Vector3 difference = mousePosition - transform.position;
+            float angle=Mathf.Atan(difference.x / difference.z)*180/Mathf.PI;
+            if (difference.z > 0)
+            {
+                syringe.transform.localRotation = Quaternion.Euler(syringe.transform.localRotation.eulerAngles.x, angle - 90, syringe.transform.localRotation.eulerAngles.x);
+            }
+            else
+            {
+                syringe.transform.localRotation = Quaternion.Euler(syringe.transform.localRotation.eulerAngles.x, angle + 90, syringe.transform.localRotation.eulerAngles.x);
+            }
             _canShoot = false;
             StartCoroutine(Reload());
         }
     }
+
+
 
     IEnumerator Reload()
     {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -62,7 +63,7 @@ public class Player : MonoBehaviour
             PlayerIsDamaged?.Invoke();
             if (health == 0)
             {
-                Time.timeScale = 0;
+                SceneManager.LoadScene("Main");
             }
             _canBeDamaged = false;
             StartCoroutine(Recover());
