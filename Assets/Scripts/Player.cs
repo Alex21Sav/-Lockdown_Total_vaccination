@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer _playerImage;
+    //[SerializeField] private SpriteRenderer _playerImage;
+    [SerializeField] private GameObject[] skins;
     [SerializeField] private TMP_Text _playerNameText;
     [SerializeField] private float _speed;
     private int health=5;
@@ -29,11 +30,32 @@ public class Player : MonoBehaviour
 
     private void ChangePlayerSkin()
     {
-        Character character = GameDataManager.GetSelectedCharacter();
+        //Character character = GameDataManager.GetSelectedCharacter();
 
+        //if (character.Image != null)
+        //{            
+        //    _playerImage.sprite = character.Image;
+        //    _playerNameText.text = character.Name;
+        //}
+        Character character = GameDataManager.GetSelectedCharacter();
         if (character.Image != null)
-        {            
-            _playerImage.sprite = character.Image;
+        {
+            /*[old code]
+            playerImage.sprite = character.image ;
+            */
+
+            // Get selected character's index:
+            int selectedSkin = GameDataManager.GetSelectedCharacterIndex();
+
+            // show selected skin's gameobject:
+            skins[selectedSkin].SetActive(true);
+
+            // hide other skins (except selectedSkin) :
+            for (int i = 0; i < skins.Length; i++)
+                if (i != selectedSkin)
+                    skins[i].SetActive(false);
+
+
             _playerNameText.text = character.Name;
         }
 
