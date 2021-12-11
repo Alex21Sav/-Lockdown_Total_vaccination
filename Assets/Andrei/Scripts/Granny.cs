@@ -8,6 +8,7 @@ public class Granny : MonoBehaviour
     private NavMeshAgent babka;
     private Transform target;
     private Vector3 rotation;
+    private int health=2;
    
     void Start()
     {
@@ -15,6 +16,14 @@ public class Granny : MonoBehaviour
         target = GameObject.FindObjectOfType<Player>().transform;
         rotation = gameObject.transform.eulerAngles;
         rotation.x = 90;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.TryGetComponent<Syringe>(out Syringe syringe))
+        {
+            health--;
+        }
     }
 
     void Update()
@@ -28,6 +37,11 @@ public class Granny : MonoBehaviour
         else if (target.localPosition.x - gameObject.transform.position.x > 1)
         {
             gameObject.transform.localScale = new Vector3(0.5f, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+        }
+
+        if (health == 0)
+        {
+            Destroy(gameObject);
         }
     }  
 }

@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 1daf50b1a4ac1024a8605e745a1a5ac4, type: 2}
 --- !u!1 &2194263
 GameObject:
   m_ObjectHideFlags: 0
@@ -35219,7 +35219,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2068281822}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7385b131e162c744bae5ea6b9bdb6286, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5

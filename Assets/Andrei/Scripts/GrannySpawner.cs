@@ -11,6 +11,7 @@ public class GrannySpawner : MonoBehaviour
 	GameObject prefabGranny;
     private Timer spawnTimer;
     private Vector3 spawnLocation;
+    float spawnTime;
 
     [SerializeField] private GameObject _point1;
     [SerializeField] private GameObject _point2;
@@ -72,19 +73,16 @@ public class GrannySpawner : MonoBehaviour
 
 	void StartRandomTimer()
     {
-        float minimumSpawnTime;
-        float maximumSpawnTime;
-        if (GameObject.FindObjectsOfType<Granny>().Length == 0)
+        int level = (int)Time.time / 10;
+        if (level > 10)
         {
-            minimumSpawnTime = 1;
-            maximumSpawnTime=2;
+            spawnTime = 2;
         }
         else
         {
-            minimumSpawnTime = 4;
-            maximumSpawnTime = 7;
+            spawnTime = 2 + (10 - level);
         }
-		spawnTimer.Duration =Random.Range(minimumSpawnTime,maximumSpawnTime);
+		spawnTimer.Duration =spawnTime;
 		spawnTimer.Run();
 	}
 }

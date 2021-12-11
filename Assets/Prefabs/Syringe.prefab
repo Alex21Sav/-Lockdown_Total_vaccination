@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 926282517792912798}
   - component: {fileID: -7351653525149254329}
   - component: {fileID: 572797557177952763}
+  - component: {fileID: 4467242225255498713}
   m_Layer: 0
   m_Name: Syringe
   m_TagString: Untagged
@@ -109,8 +110,20 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4663433297335151245}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.09, y: 0.14, z: 0.044547867}
-  m_Center: {x: 0, y: 0, z: -0.006894797}
+  m_Size: {x: 0.09, y: 0.10351186, z: 0.11664795}
+  m_Center: {x: 0, y: 0.0031894436, z: 0.008553308}
+--- !u!114 &4467242225255498713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4663433297335151245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfcafaf3802352a4f976f070c9007bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
