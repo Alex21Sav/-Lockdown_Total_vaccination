@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 954191930922369144}
   - component: {fileID: 926282517792912798}
   - component: {fileID: -7351653525149254329}
+  - component: {fileID: 572797557177952763}
   m_Layer: 0
   m_Name: Syringe
   m_TagString: Untagged
@@ -100,3 +101,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &572797557177952763
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4663433297335151245}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.09, y: 0.14, z: 0.044547867}
+  m_Center: {x: 0, y: 0, z: -0.006894797}
