@@ -63,6 +63,11 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Main");
+        }
+
         _x = Input.GetAxis("Horizontal");
         _z = Input.GetAxis("Vertical");
 
