@@ -12,6 +12,12 @@ public class GrannySpawner : MonoBehaviour
     private Timer spawnTimer;
     private Vector3 spawnLocation;
 
+    [SerializeField] private GameObject _point1;
+    [SerializeField] private GameObject _point2;
+    [SerializeField] private GameObject _point3;
+    [SerializeField] private GameObject _point4;
+    [SerializeField] private GameObject _point5;
+
     void Start()
     {
         spawnTimer = gameObject.AddComponent<Timer>();
@@ -38,32 +44,27 @@ public class GrannySpawner : MonoBehaviour
     //Spawn granny on an edge of the map
 	void GrannySpawn()
     {
-		spawnLocation.y = 0.1f;
 		int i = Random.Range(1, 6);
         if (i == 1)
         {
-            spawnLocation.x = -13.5f;
-            spawnLocation.z = 0;
+            spawnLocation = new Vector3(spawnLocation.x = _point1.transform.position.x, spawnLocation.y = _point1.transform.position.y, spawnLocation.z = _point1.transform.position.z);           
         }
         else if (i == 2)
         {
-            spawnLocation.x = -4.6f;
-            spawnLocation.z = -14;
+            spawnLocation = new Vector3(spawnLocation.x = _point2.transform.position.x, spawnLocation.y = _point2.transform.position.y, spawnLocation.z = _point2.transform.position.z);
+            
         }
         else if (i == 3)
         {
-            spawnLocation.x = 13.2f;
-            spawnLocation.z = -14;
+            spawnLocation = new Vector3(spawnLocation.x = _point3.transform.position.x, spawnLocation.y = _point3.transform.position.y, spawnLocation.z = _point3.transform.position.z);       
         }
         else if (i == 4)
         {
-            spawnLocation.x = 13.2f;
-            spawnLocation.z = 14;
+            spawnLocation = new Vector3(spawnLocation.x = _point4.transform.position.x, spawnLocation.y = _point4.transform.position.y, spawnLocation.z = _point4.transform.position.z);
         }
         else
         {
-            spawnLocation.x = 3;
-            spawnLocation.z = 14;
+            spawnLocation = new Vector3(spawnLocation.x = _point5.transform.position.x, spawnLocation.y = _point5.transform.position.y, spawnLocation.z = _point5.transform.position.z);
         }
 
         Instantiate<GameObject>(prefabGranny, new Vector3(spawnLocation.x, spawnLocation.y, spawnLocation.z), Quaternion.identity);
