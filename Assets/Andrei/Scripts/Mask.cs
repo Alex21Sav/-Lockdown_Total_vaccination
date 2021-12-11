@@ -12,7 +12,7 @@ public class Mask : MonoBehaviour
         _maskSpawner = GameObject.FindObjectOfType<MaskSpawner>().GetComponent<MaskSpawner>();
     }
 
-    public static event Action MaskAdded;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,7 +22,8 @@ public class Mask : MonoBehaviour
         }
         else if (other.gameObject.TryGetComponent<Player>(out Player player))
         {
-            MaskAdded?.Invoke();
+            GameDataManager.AddCoins(1);
+            GameSharedUI.Instance.UpdateCoinsUI();
             _maskSpawner.MaskSpawn();
             Destroy(gameObject);
         }

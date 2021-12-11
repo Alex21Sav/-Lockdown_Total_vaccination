@@ -73,14 +73,14 @@ public class GrannySpawner : MonoBehaviour
 
 	void StartRandomTimer()
     {
-        int level = (int)Time.time / 10;
+        int level = (int)Time.time / 5;
         if (level > 10)
         {
             spawnTime = 2;
         }
         else
         {
-            spawnTime = 2 + (10 - level);
+            spawnTime = 2 + (5 - level);
         }
 		spawnTimer.Duration =spawnTime;
 		spawnTimer.Run();
